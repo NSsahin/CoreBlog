@@ -10,7 +10,7 @@ namespace CoreBlog.ViewComponents.Writer
         public IViewComponentResult Invoke()
         {
             var values = wm.GetWriterById(1);
-            return View();
+            return View(values);
         }
     }
 }
