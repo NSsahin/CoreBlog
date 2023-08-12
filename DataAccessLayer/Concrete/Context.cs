@@ -31,6 +31,8 @@ namespace DataAccessLayer.Concrete
                 .OnDelete(DeleteBehavior.ClientSetNull);
 
             base.OnModelCreating(modelBuilder);
+            
+            modelBuilder.Entity<Blog>().ToTable(tb => tb.HasTrigger("TriggerName"));
         }
         public DbSet<About> Abouts { get; set; }
         public DbSet<Blog> Blogs { get; set; }
